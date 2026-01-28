@@ -1,0 +1,72 @@
+1) 
+mysql> insert into employee values(100,'Stevan','King','sking',5151254567,'1987-06-17','Ad_pres',24000,0,200,10);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employee values(101,'Neena','Kochhar','515.123.4568','1987-06-18','Ad_vp',17000,0,200,10),
+    -> (102,'Lex','De Haan','Ldehaan','515.123.4569','1987-06-19','Ad_vp',17000,0,200,10);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into employee values(101,'Neena','Kochhar','515.123.4568','1987-06-18','Ad_vp',17000,0,200,10);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into employee values(101,'Neena','Kochhar','Nkochhar','515.123.4568','1987-06-18','Ad_vp',17000,0,200,10);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employee values (102,'Lex','De Haan','Ldehaan','515.123.4569','1987-06-19','Ad_vp',17000,0,200,10);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into employee values (103,'Alexander','Hunold','Ahunold','590.423.4567','1987-06-20','It_Prog',9000,0,103,60);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into employee values (104,'Bruce','Ernst','Bernst','590.423.4569','1987-06-21','IT_Prog',6000,0,103,60),
+    -> (105,'David','Austin','Daustin','590.423.4569','1987-06-22','It_Prog',4800,0,103,60),
+    -> (106,'Valli','Pataballa','Vpatabal','590.423.4560','1987-06-23','IT_Prog',4800,0,103,60);
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> insert into employee values(107,'Diana','Lorentz','Dlorentx','590.423.5567','1987-06-24','IT_Prog',4200,0,114,30),
+    -> (108,'Nancy','Greenberg','Ngreenbe','515.124.4569','1987-06-25','SA_man',12000,0,145,80),
+    -> (109,'Daniel','Faviet','Dfaviet','515.124.4169','1987-06-26','Sa_Man',9000,0,145,80);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+
+mysql> insert into department values (10,'Administration',200,1700);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into department values (20,'Marketing',201,1800),
+    -> (30,'Purchasing',114,1700),
+    -> (40,'Human Resources',203,2400),
+    -> (50,'Shipping',121,1500),
+    -> (60,'IT',103,1400),
+    -> (70,'Public Relations',204,2700),
+    -> (80,'Sales',145,2500);
+Query OK, 7 rows affected (0.00 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+2) 
+mysql> insert into jobs values ('Ad_Pres','President',20000,40000),
+    -> ('Ad_vp','Administration Vice President',15000,30000),
+    -> ('Ad_Asst','Administration Assistant',3000,6000),
+    -> ('Fi_Mgr','Finance Manager',8200,16000),
+    -> ('Fi_Account','Accountant',4200,9000),
+    -> ('Ac_Mgr','Accounting Manager',8200,16000),
+    -> ('Ac_Account','Public Accountant',4200,9000),
+    -> ('Sa_Man','Sales Manager',10000,20000);
+Query OK, 8 rows affected (0.00 sec)
+Records: 8  Duplicates: 0  Warnings: 0
+
+3)  update employee set salary=(salary*0.1)+salary;
+ 
+4) mysql> update employee set email='Not Available',commission_pct=20 where department_id=80;
+Query OK, 2 rows affected (0.02 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+5) mysql> update employee set email='Not Avaliable' where department_id=30;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+6) mysql> update employee set email='Not Available',commission_pct=0.10;
+Query OK, 10 rows affected (0.00 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+ 
